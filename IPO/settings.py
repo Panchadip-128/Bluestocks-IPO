@@ -137,10 +137,12 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'panchadip128@gmail.com'  # Your Gmail address
-EMAIL_HOST_PASSWORD = 'dpcs melk lmlt zwcp'  # Use an app-specific password if 2-step verification is enabled
+EMAIL_HOST_PASSWORD = 'ezyq mrof aabn bzzr'  # Use an app-specific password if 2-step verification is enabled
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # settings.py
 PASSWORD_RESET_TIMEOUT = 3600  # Expire after 1 hour (default)
-# In settings.py
 PASSWORD_RESET_CONFIRM_URL = 'reset/%(uidb64)s/%(token)s/'
+
+# For debugging email sending, use the console email backend
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

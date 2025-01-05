@@ -21,6 +21,7 @@ from ipo_app import views
 from django.contrib.auth import views as auth_views
 from django.urls import include
 from rest_framework.routers import DefaultRouter
+from ipo_app.views import dashboard_view
 
 from ipo_app.viewsets import IPOViewSet
 # Router for API URLs
@@ -38,10 +39,11 @@ urlpatterns = [
     path('transactions/', views.user_transactions, name='transactions'),
     path('register/', views.register_view, name='register'),
     path('login/', views.login_view, name='login'),
+    path('dashboard/', dashboard_view, name='dashboard'),
     path('forgot-password/', views.forgot_password_view, name='forgot_password'),
     
     # Password reset views
-    path('forgot-password/', 
+    path('forgot_password/', 
          auth_views.PasswordResetView.as_view(template_name='forgot_pw.html'), 
          name='password_reset'),
     path('forgot-password/done/', 
