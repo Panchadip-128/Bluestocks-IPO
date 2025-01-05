@@ -1,6 +1,6 @@
 # Bluestocks-IPO
 
-#Project Objective
+## Project Objective
 The IPO Management System is designed to provide users with relevant IPO-related data, including but not limited to company names, logos, price bands, issue dates, issue sizes, and IPO-related documents like RHP and DRHP PDFs. Additionally, users can subscribe to IPOs and track their investment transactions. The key features of this application are:
 •	Viewing detailed IPO information
 •	Managing user subscriptions to IPOs
