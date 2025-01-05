@@ -64,3 +64,13 @@ ________________________________________
 ## Conclusion
 This internship project allowed me to gain valuable practical experience in full-stack development. I learned how to integrate various technologies like Django, PostgreSQL, Bootstrap, and JavaScript to build a robust web application. The project also improved my problem-solving skills, particularly in API development and testing.
 In the future, I would recommend adding more advanced features such as a payment gateway for subscriptions and more detailed reporting for transaction history.
+
+![bf_1](https://github.com/user-attachments/assets/e4874c3f-6f6a-4fbc-92e1-6aeb24a0a04f)
+![bf_2](https://github.com/user-attachments/assets/cbac17f4-7a7c-42f7-b3bd-d3b38c37073f)
+![bf_3](https://github.com/user-attachments/assets/4340633a-8aa0-44fe-8f02-4f25e07cbbb9)
+![bf_4](https://github.com/user-attachments/assets/a045baa0-1bc6-4bf9-bbe0-aced105639e6)
+![bf_5](https://github.com/user-attachments/assets/f86cbf0b-c259-4006-9135-f131b98dbfbb)
+![bf_6](https://github.com/user-attachments/assets/3677597d-a4d2-44a3-98b2-b0494ecc8084)
+![bf_7](https://github.com/user-attachments/assets/c96ea353-dac0-4422-95cf-9cfcf1d527b7)
+![bf_8](https://github.com/user-attachments/assets/0603fd8b-e953-4dfa-a846-0598b3ef46da)
+
