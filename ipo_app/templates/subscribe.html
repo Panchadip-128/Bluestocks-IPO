@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subscribe to IPO</title>
+</head>
+<body>
+    <h1>Subscribe to {{ ipo.company_name }}</h1>
+    <p>Price: ${{ ipo.price }}</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Subscribe</button>
+    </form>
+</body>
+</html>

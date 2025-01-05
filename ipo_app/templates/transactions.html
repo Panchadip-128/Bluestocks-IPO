@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transactions</title>
+</head>
+<body>
+    <h1>Your Transactions</h1>
+    <ul>
+        {% for transaction in transactions %}
+            <li>
+                IPO: {{ transaction.ipo.company_name }} - Amount: ${{ transaction.amount }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

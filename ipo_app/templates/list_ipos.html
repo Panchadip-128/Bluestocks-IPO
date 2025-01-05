@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available IPOs</title>
+</head>
+<body>
+    <h1>Available IPOs</h1>
+    <ul>
+        {% for ipo in ipos %}
+            <li>
+                {{ ipo.company_name }} - ${{ ipo.price }}
+                <a href="{% url 'subscribe' ipo_id=ipo.id %}">Subscribe</a>
+
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

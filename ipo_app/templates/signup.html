@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueStock Signup</title>
+    <style>
+        /* Basic reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(blue, white);
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 20px 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-in-out;
+            width: 400px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; 
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 60px;
+            height: 60px;
+            margin-right: 30px;
+            animation: zoomIn 2s ease-in-out;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            color: #023970;
+            margin: 0;
+            margin-left: 30px;
+        }
+
+        form .form-group {
+            margin-bottom: 15px;
+        }
+
+        form .form-group.inline {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        form input[type="email"],
+        form input[type="password"],
+        form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        form input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .forgot-password {
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 12px;
+            color: #1e90ff;
+            text-decoration: none;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #1e90ff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #187bcd;
+        }
+
+        .social-login {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .social-login p {
+            margin-bottom: 1px;
+            font-size: 14px;
+        }
+
+        .btn.google {
+            background: #db4437;
+            margin-top: 10px;
+        }
+
+        .btn.google:hover {
+            background: #c33c28;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            .header img {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 24px;
+            }
+        }
+
+        /* Success and error message styling */
+        .message {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            display: none;
+        }
+
+        .message.success {
+            color: green;
+        }
+
+        .message.error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <img src="image.png" alt="BlueStock Logo">
+            <h1>BLUESTOCK</h1>
+        </div>
+        <form id="signupForm" onsubmit="return validateSignupForm()">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your username" required>
+                <span id="usernameError" style="color: red; display: none;">Username is required.</span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <span id="emailError" style="color: red; display: none;">Please enter a valid email.</span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+                <span id="passwordError" style="color: red; display: none;">Password is required.</span>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                <span id="confirmPasswordError" style="color: red; display: none;">Passwords do not match.</span>
+            </div>
+            <div class="form-group inline">
+                <input type="checkbox" id="terms">
+                <label for="terms">I agree to the terms and conditions</label>
+                <span id="termsError" style="color: red; display: none;">You must agree to the terms and conditions.</span>
+            </div>
+            <button type="submit" class="btn">Signup</button>
+        </form>
+        <div class="social-login">
+            <p>or sign up with</p>
+            <button class="btn google">Continue with Google</button>
+        </div>
+        <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+
+        <div id="successMessage" class="message success">Signup successful! You can now log in.</div>
+        <div id="errorMessage" class="message error">There was an error with your signup. Please try again.</div>
+    </div>
+
+    <script>
+        function validateSignupForm() {
+            // Clear previous error messages
+            document.getElementById('usernameError').style.display = 'none';
+            document.getElementById('emailError').style.display = 'none';
+            document.getElementById('passwordError').style.display = 'none';
+            document.getElementById('confirmPasswordError').style.display = 'none';
+            document.getElementById('termsError').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'none';
+            document.getElementById('errorMessage').style.display = 'none';
+
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const terms = document.getElementById('terms').checked;
+
+            let isValid = true;
+
+            // Username validation
+            if (!username) {
+                document.getElementById('usernameError').style.display = 'inline';
+                isValid = false;
+            }
+
+            // Email validation
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailRegex.test(email)) {
+                document.getElementById('emailError').style.display = 'inline';
+                isValid = false;
+            }
+
+            // Password validation
+            if (!password) {
+                document.getElementById('passwordError').style.display = 'inline';
+                isValid = false;
+            }
+
+            // Confirm password validation
+            if (password !== confirmPassword) {
+                document.getElementById('confirmPasswordError').style.display = 'inline';
+                isValid = false;
+            }
+
+            // Terms validation
+            if (!terms) {
+                document.getElementById('termsError').style.display = 'inline';
+                isValid = false;
+            }
+
+            if (isValid) {
+                document.getElementById('successMessage').style.display = 'block';
+            } else {
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+
+            return isValid; // Prevent form submission if validation fails
+        }
+    </script>
+
+</body>
+</html>
