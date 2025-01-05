@@ -8,7 +8,7 @@ The IPO Management System is designed to provide users with relevant IPO-related
 •	Accessing downloadable IPO-related PDFs
 •	A REST API for clients' websites and apps to fetch IPO data
 ________________________________________
-#Tools and Technologies Used
+## Tools and Technologies Used
 •	Programming Languages: Python (Backend), HTML, CSS, JavaScript (Frontend)
 •	Frameworks: Django (Backend), Bootstrap (Frontend)
 •	Database: PostgreSQL, SQLite3
@@ -17,21 +17,21 @@ ________________________________________
 •	Testing Tools: Postman (for API testing)
 •	IDE: Visual Studio Code
 ________________________________________
-#System Design and Architecture
+## System Design and Architecture
 The IPO Management System follows a Model-View-Template (MVT) architecture, where:
 •	Model: Represents the database schema for IPOs, transactions, user subscriptions, etc.
 •	View: Defines the frontend templates that render the data for the user interface.
 •	Template: Manages the communication between the model and view. In this case, templates such as HTML pages (Subscribe.html, ipos_list.html, etc.) will display the information fetched by the backend.
 The system architecture also includes the use of REST APIs to fetch and manage IPO data, allowing external clients to integrate with our platform.
 ________________________________________
-#Features of the System
+## Features of the System
 1.	IPO Listings: Users can view a list of upcoming and ongoing IPOs, including detailed information such as company name, price band, issue date, status, and more.
 2.	User Subscription: Users can subscribe to an IPO, view their subscription details, and track the subscription status.
 3.	Transaction History: Users can view a history of their IPO transactions, including IPO price, listing price, and listing gain.
 4.	Downloadable PDFs: Users can download the Red Herring Prospectus (RHP) and Draft Red Herring Prospectus (DRHP) documents for each IPO.
 5.	API Integration: A REST API to integrate IPO data into third-party platforms, such as clients' websites or applications.
 ________________________________________
-#Implementation
+## Implementation
 Backend Development:
 1.	Setup the Django Project: I started by setting up the Django project and configured the PostgreSQL database for managing IPO-related data.
 2.	Models Implementation:
@@ -46,14 +46,14 @@ o	Developed functionality to dynamically display IPO listings and transaction da
 #User Authentication:
 Implemented basic user authentication using Django’s built-in authentication system, allowing users to register, log in, and manage their profiles.
 ________________________________________
-#Testing and Debugging
+## Testing and Debugging
 I used several methods to test the system:
 1.	Unit Testing: Wrote test cases for backend logic, especially the models and API views, to ensure correctness and integrity of the data.
 2.	Integration Testing: Tested the integration of frontend with backend APIs to ensure seamless communication.
 3.	Manual Testing: Tested the web application in various browsers and devices to ensure compatibility and responsiveness.
 Some common bugs faced included issues with rendering the dynamic data on the frontend, which was resolved by improving the backend API and ensuring correct data format handling.
 ________________________________________
-#Results
+## Results
 The final product was a fully functional IPO Management System with the following features:
 •	Display of IPO details, including downloadable PDFs
 •	User authentication for subscription management
@@ -61,6 +61,6 @@ The final product was a fully functional IPO Management System with the followin
 •	A clean, responsive UI for ease of use on all devices
 The project was successfully deployed and tested, and the application works as expected.
 ________________________________________
-#Conclusion
+## Conclusion
 This internship project allowed me to gain valuable practical experience in full-stack development. I learned how to integrate various technologies like Django, PostgreSQL, Bootstrap, and JavaScript to build a robust web application. The project also improved my problem-solving skills, particularly in API development and testing.
 In the future, I would recommend adding more advanced features such as a payment gateway for subscriptions and more detailed reporting for transaction history.
